@@ -12,6 +12,7 @@ module.exports.renderNewForm = (req, res) => {
   res.render("listings/new.ejs");
 };
 
+
 module.exports.showListing = async (req, res) => {
   let id = req.params.id;
   const listing = await Listing.findById(id)
@@ -41,7 +42,6 @@ module.exports.createLIsting = async (req, res) => {
   newListing.geometry = response.body.features[0].geometry;
 
   let savedListing = await newListing.save();
-  console.log(savedListing);
   req.flash("success", "New Listing Created");
   res.redirect("/listings");
 };

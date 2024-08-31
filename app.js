@@ -69,9 +69,9 @@ const sessionOptions = {
   },
 };
 
-// app.get("/", (req, res) => {
-//   res.send("Welcome");
-// });
+app.get("/", (req, res) => {
+  res.send("Welcome");
+});
 
 
 
@@ -95,14 +95,6 @@ app.use((req, res, next) => {
   next();
 });
 
-// app.get("/demouser", async (req, res) => {
-//   let fakeUser = new User({
-//     email: "student@example.com",
-//     username:"delta-student",
-//   });
-//   let registeredUser = await User.register(fakeUser, "helloworld");
-//   res.send(registeredUser);
-// })
 
 app.use("/listings", listings);
 
